@@ -4,7 +4,7 @@
  */
 const dotenv = require("dotenv");
 dotenv.config();
-const { Account, Aptos, AptosConfig, NetworkToNetworkName, Network } = require("@aptos-labs/ts-sdk");
+const { Account, Aptos, AptosConfig, NetworkToNetworkName, Network } = require("@moveindustries/ts-sdk");
 
 const ALICE_INITIAL_BALANCE = 100_000_000;
 const SPONSOR_INITIAL_BALANCE = 100_000_000;

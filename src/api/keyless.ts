@@ -30,7 +30,7 @@ export class Keyless {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * async function runExample() {
    *     // Create a new configuration for the Aptos client
@@ -45,7 +45,7 @@ export class Keyless {
    * ```
    * @group Keyless
    */
-  constructor(readonly config: AptosConfig) {}
+  constructor(readonly config: AptosConfig) { }
 
   /**
    * Fetches the pepper from the Aptos pepper service API.
@@ -59,7 +59,7 @@ export class Keyless {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -102,7 +102,7 @@ export class Keyless {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network, EphemeralKeyPair, getPepper } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network, EphemeralKeyPair, getPepper } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -169,7 +169,7 @@ export class Keyless {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network, deriveKeylessAccount } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network, deriveKeylessAccount } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);

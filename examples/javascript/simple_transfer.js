@@ -12,7 +12,7 @@ const {
   Network,
   AccountAddress,
   U64,
-} = require("@aptos-labs/ts-sdk");
+} = require("@moveindustries/ts-sdk");
 
 const APTOS_COIN = "0x1::aptos_coin::AptosCoin";
 const ALICE_INITIAL_BALANCE = 100_000_000;

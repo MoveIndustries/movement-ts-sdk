@@ -5,7 +5,7 @@
  * Example to submit a simple sponsored transaction where Alice transfers APT coin to Bob
  * with a sponsor account to pay for the gas fee
  */
-import { Account, Aptos, AptosConfig, Network, NetworkToNetworkName } from "@aptos-labs/ts-sdk";
+import { Account, Aptos, AptosConfig, Network, NetworkToNetworkName } from "@moveindustries/ts-sdk";
 import dotenv from "dotenv";
 dotenv.config();
 

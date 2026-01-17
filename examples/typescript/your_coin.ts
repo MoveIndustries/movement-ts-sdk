@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 import dotenv from "dotenv";
 dotenv.config();
-import { Account, AccountAddress, Aptos, AptosConfig, Network, NetworkToNetworkName } from "@aptos-labs/ts-sdk";
+import { Account, AccountAddress, Aptos, AptosConfig, Network, NetworkToNetworkName } from "@moveindustries/ts-sdk";
 import { compilePackage, getPackageBytesToPublish } from "./utils";
 
 /**

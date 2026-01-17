@@ -33,7 +33,7 @@ import {
   SimpleTransaction,
   generateTransactionPayload,
   InputViewFunctionJsonData,
-} from "@aptos-labs/ts-sdk";
+} from "@moveindustries/ts-sdk";
 
 // Default to devnet, but allow for overriding
 const APTOS_NETWORK: Network = NetworkToNetworkName[process.env.APTOS_NETWORK] || Network.DEVNET;

@@ -76,7 +76,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * async function runExample() {
    *     // Initialize the Aptos client with testnet configuration
@@ -102,7 +102,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -132,7 +132,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -171,7 +171,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -211,7 +211,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -250,7 +250,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -292,7 +292,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -324,7 +324,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -363,7 +363,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -399,7 +399,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -434,7 +434,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -477,7 +477,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -530,7 +530,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -579,7 +579,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -626,7 +626,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -672,7 +672,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -697,8 +697,8 @@ export class Account {
     accountAddress: AccountAddressInput;
     minimumLedgerVersion?: AnyNumber;
     options?: PaginationArgs &
-      OrderByArg<GetAccountCoinsDataResponse[0]> &
-      WhereArg<CurrentFungibleAssetBalancesBoolExp>;
+    OrderByArg<GetAccountCoinsDataResponse[0]> &
+    WhereArg<CurrentFungibleAssetBalancesBoolExp>;
   }): Promise<GetAccountCoinsDataResponse> {
     await waitForIndexerOnVersion({
       config: this.config,
@@ -721,7 +721,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -757,7 +757,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -794,7 +794,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -927,7 +927,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -981,7 +981,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network, Ed25519PrivateKey } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network, Ed25519PrivateKey } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -1036,7 +1036,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network, Ed25519Account } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network, Ed25519Account } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -1090,7 +1090,7 @@ export class Account {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network, Ed25519PrivateKey } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network, Ed25519PrivateKey } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);

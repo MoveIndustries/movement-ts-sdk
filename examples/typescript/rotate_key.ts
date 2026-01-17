@@ -8,7 +8,7 @@ import {
   Ed25519Account,
   Network,
   NetworkToNetworkName,
-} from "@aptos-labs/ts-sdk";
+} from "@moveindustries/ts-sdk";
 
 const WIDTH = 16;
 

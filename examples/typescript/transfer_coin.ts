@@ -5,7 +5,7 @@
  * Similar to ./simple_transfer.ts, but uses transferCoinTransaction to generate the transaction.
  */
 
-import { Account, AccountAddress, Aptos, AptosConfig, Network, NetworkToNetworkName } from "@aptos-labs/ts-sdk";
+import { Account, AccountAddress, Aptos, AptosConfig, Network, NetworkToNetworkName } from "@moveindustries/ts-sdk";
 import dotenv from "dotenv";
 dotenv.config();
 

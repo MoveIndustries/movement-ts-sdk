@@ -70,11 +70,11 @@ All notable changes to the Aptos TypeScript SDK will be captured in this file. T
 
 # 2.0.0 (2025-05-06)
 
-- Remove `scriptComposer` api due to increase in the sdk bundle size, If you wish to continue using it, please use version 1.39.0: [https://www.npmjs.com/package/@aptos-labs/ts-sdk/v/1.39.0](https://www.npmjs.com/package/@aptos-labs/ts-sdk/v/1.39.0)
+- Remove `scriptComposer` api due to increase in the sdk bundle size, If you wish to continue using it, please use version 1.39.0: [https://www.npmjs.com/package/@moveindustries/ts-sdk/v/1.39.0](https://www.npmjs.com/package/@moveindustries/ts-sdk/v/1.39.0)
 - [`Breaking`] Ed25519 and Secp256k1 private keys will now default to the AIP-80 format when calling `toString()`.
 - [`Breaking`] Custom networks now need to set the `network` field in the client config to the correct network type. This is needed to reduce network calls.
 - Add info message if using `CUSTOM` network
-- Update `@aptos-labs/aptos-client` to version `2.0.0`
+- Update `@moveindustries/movement-client` to version `2.0.0`
 
 # 1.39.0 (2025-05-05)
 
@@ -169,7 +169,7 @@ All notable changes to the Aptos TypeScript SDK will be captured in this file. T
 
 # 1.31.0 (2024-10-24)
 
-- Bump `@aptos-labs/aptos-cli` to `1.0.2`
+- Bump `@moveindustries/movement-cli` to `1.0.2`
 - Fix the `Move` CLI command to correctly handle the success/error outputs
 
 # 1.30.0 (2024-10-21)
@@ -178,7 +178,7 @@ All notable changes to the Aptos TypeScript SDK will be captured in this file. T
 - Add `showStdout` optional property to `Move` and `LocalNode` classes to control the output of the CLI commands
 - Add support for MultiKey's in transaction simulations
 - Adds default implementation for `toString` and `toStringWithoutPrefix` for `Serializable`
-- Bump `@aptos-labs/aptos-cli` to `1.0.1`
+- Bump `@moveindustries/movement-cli` to `1.0.1`
 
 # 1.29.1 (2024-10-09)
 
@@ -202,11 +202,11 @@ All notable changes to the Aptos TypeScript SDK will be captured in this file. T
 
 # 1.27.1 (2024-08-23)
 
-- [Security Fix] Bump `@aptos-labs/aptos-client` to version 0.1.1
+- [Security Fix] Bump `@moveindustries/movement-client` to version 0.1.1
 
 # 1.27.0 (2024-08-15)
 
-- Upgrade `@aptos-labs/aptos-cli` version to `0.2.0`
+- Upgrade `@moveindustries/movement-cli` version to `0.2.0`
 - Update Indexer GraphQL schema
 - Add `convertAmountFromHumanReadableToOnChain` and `convertAmountFromOnChainToHumanReadable` helper methods
 - Export `helpers.ts` file
@@ -292,7 +292,7 @@ All notable changes to the Aptos TypeScript SDK will be captured in this file. T
 
 # 1.16.0 (2024-05-22)
 
-- Upgrade `@aptos-labs/aptos-cli` package to version `0.1.8`
+- Upgrade `@moveindustries/movement-cli` package to version `0.1.8`
 - [`Fix`] CLI scripts to be OS compatible with Mac, Linux and Windows
 - [`Fix`] Support generating transactions with loose types for SDK V1 backward compatibility
 
@@ -303,7 +303,7 @@ All notable changes to the Aptos TypeScript SDK will be captured in this file. T
 - Refactors the core/accounts folder to the top level
 - Separates the signing message functionality out of the transactionSubmission.ts file
 - Adds an Account implementation for MultiKey accounts
-- Upgrade `@aptos-labs/aptos-cli` package to version `0.1.7`
+- Upgrade `@moveindustries/movement-cli` package to version `0.1.7`
 - Introduce `table` function APIs
 - Add `getTableItemsData` and `getTableItemsMetadata` API queries
 - Add `decimal` prop back to `current_token_ownerships_v2.current_token_data` response
@@ -325,7 +325,7 @@ All notable changes to the Aptos TypeScript SDK will be captured in this file. T
 
 - [`Fix`] Fix `generateSignedTransaction` so that it works with object instances from different bundles
 - [`Fix`] Preventing undefined options from overriding fallbacks in `generateRawTransaction`
-- Use `@aptos-labs/aptos-cli` as a regular dependency
+- Use `@moveindustries/movement-cli` as a regular dependency
 
 # 1.13.1 (2024-04-23)
 
@@ -424,7 +424,7 @@ All notable changes to the Aptos TypeScript SDK will be captured in this file. T
 - [`Breaking`] Capitalize `TransactionPayloadMultiSig` type
 - Add support to Array value in digital asset property map
 - [`Breaking`] Change `maxGasAmount, gasUnitPrice and expireTimestamp` properties in `InputGenerateTransactionOptions` type to `number` type
-- Add `@aptos-labs/aptos-cli` npm package as a dev dependency
+- Add `@moveindustries/movement-cli` npm package as a dev dependency
 - Implement a `LocalNode` module to run a local testnet with in the SDK environment
 - Use `LocalNode` module to spin up a local testnet pre running SDK tests
 - Update BigInt constants to be hardcoded rather than use Math.pow
@@ -435,7 +435,7 @@ All notable changes to the Aptos TypeScript SDK will be captured in this file. T
 - Fixed `waitOnIndexer` to wait on correct tables / remove duplicate or unnecessary waits on indexer
 - [`Breaking`] Changed output of `getIndexerLastSuccessVersion` to `bigint` from `number`
 - Update dependencies in the Typescript SDK to keep up with latest changes
-- Updated @aptos-labs/aptos-client dependency
+- Updated @moveindustries/movement-client dependency
 - [`Breaking`] Hex string inputs to `vector<u8>` entry function arguments will now be interpreted as a string instead of hex
 - String inputs to `vector<u8>` entry function arguments will now be interpreted as UTF-8 bytes
 - ArrayBuffer is now a possible input for `vector<u8>` entry function arguments

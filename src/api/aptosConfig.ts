@@ -1,23 +1,23 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-import aptosClient from "@aptos-labs/aptos-client";
+import aptosClient from "@moveindustries/movement-client";
 import {
   AptosSettings,
-  ClientConfig,
   Client,
+  ClientConfig,
+  FaucetConfig,
   FullNodeConfig,
   IndexerConfig,
-  FaucetConfig,
-  TransactionGenerationConfig,
   PluginConfig,
+  TransactionGenerationConfig,
   TransactionSubmitter,
 } from "../types";
 import {
-  NetworkToNodeAPI,
+  Network,
   NetworkToFaucetAPI,
   NetworkToIndexerAPI,
-  Network,
+  NetworkToNodeAPI,
   NetworkToPepperAPI,
   NetworkToProverAPI,
 } from "../utils/apiEndpoints";
@@ -29,7 +29,7 @@ import { AptosApiType, DEFAULT_MAX_GAS_AMOUNT, DEFAULT_TXN_EXP_SEC_FROM_NOW } fr
  *
  * @example
  * ```typescript
- * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+ * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
  *
  * async function runExample() {
  *     // Create a configuration for connecting to the Aptos testnet
@@ -52,7 +52,7 @@ export class AptosConfig {
   readonly network: Network;
 
   /**
-   * The client instance the SDK uses. Defaults to `@aptos-labs/aptos-client
+   * The client instance the SDK uses. Defaults to `@moveindustries/movement-client
    * @group Client
    */
   readonly client: Client;
@@ -142,7 +142,7 @@ export class AptosConfig {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * async function runExample() {
    *     // Create a new Aptos client with default settings
@@ -179,9 +179,9 @@ export class AptosConfig {
     this.transactionGenerationConfig = settings?.transactionGenerationConfig ?? {};
     this.pluginConfig = settings?.pluginSettings
       ? {
-          ...settings.pluginSettings,
-          IGNORE_TRANSACTION_SUBMITTER: false,
-        }
+        ...settings.pluginSettings,
+        IGNORE_TRANSACTION_SUBMITTER: false,
+      }
       : undefined;
   }
 
@@ -193,7 +193,7 @@ export class AptosConfig {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network, AptosApiType } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network, AptosApiType } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -249,7 +249,7 @@ export class AptosConfig {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -278,7 +278,7 @@ export class AptosConfig {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);

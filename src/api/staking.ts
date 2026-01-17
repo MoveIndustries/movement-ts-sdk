@@ -27,7 +27,7 @@ export class Staking {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * async function runExample() {
    *     // Create a configuration for the Aptos client
@@ -42,7 +42,7 @@ export class Staking {
    * ```
    * @group Staking
    */
-  constructor(readonly config: AptosConfig) {}
+  constructor(readonly config: AptosConfig) { }
 
   /**
    * Queries the current number of delegators in a specified pool. Throws an error if the pool is not found.
@@ -54,7 +54,7 @@ export class Staking {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -90,7 +90,7 @@ export class Staking {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -127,7 +127,7 @@ export class Staking {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);

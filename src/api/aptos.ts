@@ -26,7 +26,7 @@ import { AccountAbstraction } from "./account/abstraction";
  *
  * @example
  * ```typescript
- * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+ * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
  *
  * async function runExample() {
  *     // Create a configuration for connecting to the Aptos testnet
@@ -76,7 +76,7 @@ export class Aptos {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * async function runExample() {
    *     // Create a new Aptos client with default settings
@@ -115,18 +115,18 @@ export class Aptos {
 // from the other classes will be recognized by typescript.
 export interface Aptos
   extends Account,
-    ANS,
-    Coin,
-    DigitalAsset,
-    Event,
-    Faucet,
-    FungibleAsset,
-    General,
-    Keyless,
-    Staking,
-    Table,
-    AptosObject,
-    Omit<Transaction, "build" | "simulate" | "submit" | "batch"> {}
+  ANS,
+  Coin,
+  DigitalAsset,
+  Event,
+  Faucet,
+  FungibleAsset,
+  General,
+  Keyless,
+  Staking,
+  Table,
+  AptosObject,
+  Omit<Transaction, "build" | "simulate" | "submit" | "batch"> { }
 
 /**
 In TypeScript, we can’t inherit or extend from more than one class,

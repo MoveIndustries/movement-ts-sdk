@@ -2,10 +2,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { AptosConfig } from "../api/aptosConfig";
-import { VERSION } from "../version";
+import { AptosApiError } from "../errors";
 import { AnyNumber, AptosRequest, AptosResponse, Client, ClientRequest, ClientResponse, MimeType } from "../types";
 import { AptosApiType } from "../utils";
-import { AptosApiError } from "../errors";
+import { VERSION } from "../version";
 
 /**
  * Sends a request using the specified options and returns the response.
@@ -44,8 +44,8 @@ export async function request<Req, Res>(options: ClientRequest<Req>, client: Cli
   }
 
   /*
-   * make a call using the @aptos-labs/aptos-client package
-   * {@link https://www.npmjs.com/package/@aptos-labs/aptos-client}
+   * make a call using the @moveindustries/movement-client package
+   * {@link https://www.npmjs.com/package/@moveindustries/movement-client}
    */
   return client.provider<Req, Res>({
     url,

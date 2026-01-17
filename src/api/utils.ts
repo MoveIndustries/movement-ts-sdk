@@ -14,7 +14,7 @@ import { AnyNumber } from "../types";
  *
  * @example
  * ```typescript
- * import { Aptos, AptosConfig, Network, ProcessorType } from "@aptos-labs/ts-sdk";
+ * import { Aptos, AptosConfig, Network, ProcessorType } from "@moveindustries/ts-sdk";
  *
  * const config = new AptosConfig({ network: Network.TESTNET });
  * const aptos = new Aptos(config);

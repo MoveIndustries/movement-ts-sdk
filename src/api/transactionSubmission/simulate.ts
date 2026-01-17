@@ -25,7 +25,7 @@ export class Simulate {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * async function runExample() {
    *     // Create a configuration for the Aptos client
@@ -61,7 +61,7 @@ export class Simulate {
    *     Aptos,
    *     AptosConfig,
    *     Network,
-   * } from "@aptos-labs/ts-sdk";
+   * } from "@moveindustries/ts-sdk";
    *
    * async function example() {
    *     let sender = Account.generate();
@@ -130,7 +130,7 @@ export class Simulate {
    *     Aptos,
    *     AptosConfig,
    *     Network,
-   * } from "@aptos-labs/ts-sdk";
+   * } from "@moveindustries/ts-sdk";
    *
    * async function example() {
    *     let sender1 = Account.generate();

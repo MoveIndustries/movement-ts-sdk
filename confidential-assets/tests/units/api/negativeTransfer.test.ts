@@ -1,4 +1,4 @@
-import { Account } from "@aptos-labs/ts-sdk";
+import { Account } from "@moveindustries/ts-sdk";
 import {
   aptos,
   confidentialAsset,

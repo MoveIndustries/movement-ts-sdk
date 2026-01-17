@@ -13,7 +13,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import assert from "assert";
-import { Account, Aptos, AptosConfig, Hex, Network, NetworkToNetworkName } from "@aptos-labs/ts-sdk";
+import { Account, Aptos, AptosConfig, Hex, Network, NetworkToNetworkName } from "@moveindustries/ts-sdk";
 import { compilePackage, getPackageBytesToPublish } from "./utils";
 
 const APTOS_NETWORK: Network = NetworkToNetworkName[process.env.APTOS_NETWORK ?? Network.DEVNET];

@@ -22,7 +22,7 @@ import {
   InputViewFunctionData,
   Network,
   NetworkToNetworkName,
-} from "@aptos-labs/ts-sdk";
+} from "@moveindustries/ts-sdk";
 import { createInterface } from "readline";
 // Default to devnet, but allow for overriding
 const APTOS_NETWORK: Network = NetworkToNetworkName[process.env.APTOS_NETWORK ?? Network.DEVNET];
@@ -159,9 +159,9 @@ const createFungibleAsset = async (aptos: Aptos, admin: Account): Promise<void> 
   await new Promise<void>((resolve) => {
     readline.question(
       "Follow the steps to publish the Dog and Cat Coin module with Admin's address, and press enter. \n" +
-        "1. cd to /aptos-ts-sdk/examples/typescript/move/facoin folder \n" +
-        "2. run 'aptos move publish --named-address FACoin=[admin] --profile=[admin] \n" +
-        "   Note: [admin] is the same profile you used to publish your 'swap' package",
+      "1. cd to /aptos-ts-sdk/examples/typescript/move/facoin folder \n" +
+      "2. run 'aptos move publish --named-address FACoin=[admin] --profile=[admin] \n" +
+      "   Note: [admin] is the same profile you used to publish your 'swap' package",
       () => {
         resolve();
       },
@@ -189,11 +189,11 @@ const mintCoin = async (aptos: Aptos, admin: Account, amount: number | bigint, c
 const example = async () => {
   console.log(
     "This example will create a main user account called 'Admin', it will be used to deploy Liquidity pool and two new fungible assets. \n" +
-      "After creating the Dog and Cat coin, and the liquidity pool, it will swap one token for another. \n" +
-      "Note: This example requires you to have the 'swap' module published before running. \n" +
-      "If you haven't published the 'swap' module, please publish the package using \n" +
-      "'aptos move create-resource-account-and-publish-package --seed 0 --address-name=swap --named-addresses deployer=[admin] --profile [admin]' first. \n" +
-      "[admin] is the account profile you will be using for this example. \n",
+    "After creating the Dog and Cat coin, and the liquidity pool, it will swap one token for another. \n" +
+    "Note: This example requires you to have the 'swap' module published before running. \n" +
+    "If you haven't published the 'swap' module, please publish the package using \n" +
+    "'aptos move create-resource-account-and-publish-package --seed 0 --address-name=swap --named-addresses deployer=[admin] --profile [admin]' first. \n" +
+    "[admin] is the account profile you will be using for this example. \n",
   );
 
   // Prerequisite check

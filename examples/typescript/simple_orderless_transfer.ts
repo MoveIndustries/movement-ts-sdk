@@ -12,7 +12,7 @@ import {
   InputViewFunctionJsonData,
   Network,
   NetworkToNetworkName,
-} from "@aptos-labs/ts-sdk";
+} from "@moveindustries/ts-sdk";
 import dotenv from "dotenv";
 dotenv.config();
 

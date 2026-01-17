@@ -54,7 +54,7 @@ import { rotateAuthKey, rotateAuthKeyUnverified } from "../internal/account";
  * This class is used as part of the Aptos object, so should be called like so:
  * @example
  * ```typescript
- * import { Account, Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+ * import { Account, Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
  *
  * const APTOS_COIN = "0x1::aptos_coin::AptosCoin";
  * const COIN_STORE = `0x1::coin::CoinStore<${APTOS_COIN}>`;
@@ -150,7 +150,7 @@ export class Transaction {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * async function runExample() {
    *     // Create a new Aptos client instance
@@ -184,7 +184,7 @@ export class Transaction {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -221,7 +221,7 @@ export class Transaction {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -251,7 +251,7 @@ export class Transaction {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -283,7 +283,7 @@ export class Transaction {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -327,7 +327,7 @@ export class Transaction {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -362,13 +362,13 @@ export class Transaction {
   /**
    * Estimates the gas unit price required to process a transaction on the Aptos blockchain in a timely manner.
    * This helps users to understand the cost associated with their transactions.
-   * {@link https://api.mainnet.aptoslabs.com/v1/spec#/operations/estimate_gas_price}
+   * {@link https://mainnet.movementnetwork.xyz/v1/spec#/operations/estimate_gas_price}
    *
    * @returns An object containing the estimated gas price.
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET }); // Specify your network
    * const aptos = new Aptos(config);
@@ -397,7 +397,7 @@ export class Transaction {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -442,7 +442,7 @@ export class Transaction {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -568,7 +568,7 @@ export class Transaction {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -613,7 +613,7 @@ export class Transaction {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -663,7 +663,7 @@ export class Transaction {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network, Account } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network, Account } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);
@@ -710,7 +710,7 @@ export class Transaction {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);

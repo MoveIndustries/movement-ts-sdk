@@ -20,7 +20,7 @@ import {
   TypeTagAddress,
   TypeTagU64,
   U64,
-} from "@aptos-labs/ts-sdk";
+} from "@moveindustries/ts-sdk";
 
 const APTOS_COIN_TYPE = parseTypeTag(APTOS_COIN);
 const ALICE_INITIAL_BALANCE = 100_000_000;

@@ -10,7 +10,7 @@
  * `<Req, Res>(requestOptions: ClientRequest<Req>): Promise<ClientResponse<Res>>;`
  *
  */
-import { Aptos, AptosConfig, ClientResponse, ClientRequest, Network, NetworkToNetworkName } from "@aptos-labs/ts-sdk";
+import { Aptos, AptosConfig, ClientResponse, ClientRequest, Network, NetworkToNetworkName } from "@moveindustries/ts-sdk";
 import dotenv from "dotenv";
 dotenv.config();
 // eslint-disable-next-line import/no-commonjs

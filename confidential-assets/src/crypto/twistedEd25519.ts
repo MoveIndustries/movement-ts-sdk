@@ -17,7 +17,7 @@ import {
   CKDPriv,
   Serializer,
   Deserializer,
-} from "@aptos-labs/ts-sdk";
+} from "@moveindustries/ts-sdk";
 
 export { RistrettoPoint } from "@noble/curves/ed25519";
 export type RistPoint = InstanceType<typeof RistrettoPoint>;

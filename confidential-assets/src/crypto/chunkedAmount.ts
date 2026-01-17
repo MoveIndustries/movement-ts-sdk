@@ -1,4 +1,4 @@
-import { AnyNumber } from "@aptos-labs/ts-sdk";
+import { AnyNumber } from "@moveindustries/ts-sdk";
 
 /**
  * Number of chunks for confidential balance

@@ -27,7 +27,7 @@ import {
   NetworkToNetworkName,
   UserTransactionResponse,
   TransactionWorkerEventsEnum,
-} from "@aptos-labs/ts-sdk";
+} from "@moveindustries/ts-sdk";
 
 const APTOS_NETWORK: Network = NetworkToNetworkName[process.env.APTOS_NETWORK ?? Network.DEVNET];
 

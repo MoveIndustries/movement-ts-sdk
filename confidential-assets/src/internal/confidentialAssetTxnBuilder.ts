@@ -9,7 +9,7 @@ import {
   InputGenerateTransactionOptions,
   LedgerVersionArg,
   SimpleTransaction,
-} from "@aptos-labs/ts-sdk";
+} from "@moveindustries/ts-sdk";
 import { concatBytes } from "@noble/hashes/utils";
 import {
   TwistedElGamal,

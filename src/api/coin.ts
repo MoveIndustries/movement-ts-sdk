@@ -21,7 +21,7 @@ export class Coin {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * async function runExample() {
    *     // Create a new Aptos client with testnet configuration
@@ -34,7 +34,7 @@ export class Coin {
    * ```
    * @group Coin
    */
-  constructor(readonly config: AptosConfig) {}
+  constructor(readonly config: AptosConfig) { }
 
   /**
    * Generate a transfer coin transaction that can be simulated, signed, and submitted.
@@ -52,7 +52,7 @@ export class Coin {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.TESTNET });
    * const aptos = new Aptos(config);

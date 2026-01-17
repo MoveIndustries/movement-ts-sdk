@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-import { AccountAddressInput, Aptos, LedgerVersionArg } from "@aptos-labs/ts-sdk";
+import { AccountAddressInput, Aptos, LedgerVersionArg } from "@moveindustries/ts-sdk";
 import {
   TwistedEd25519PrivateKey,
   TwistedEd25519PublicKey,

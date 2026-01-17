@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-import { Account, AccountAddressInput, AnyNumber } from "@aptos-labs/ts-sdk";
+import { Account, AccountAddressInput, AnyNumber } from "@moveindustries/ts-sdk";
 import { TwistedEd25519PrivateKey } from "../../src";
 import {
   getTestAccount,

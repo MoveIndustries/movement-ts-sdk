@@ -6,7 +6,7 @@
  * @category Network
  */
 export const NetworkToIndexerAPI: Record<string, string> = {
-  mainnet: "https://api.mainnet.aptoslabs.com/v1/graphql",
+  mainnet: "https://mainnet.movementnetwork.xyz/v1/graphql",
   testnet: "https://api.testnet.aptoslabs.com/v1/graphql",
   devnet: "https://api.devnet.aptoslabs.com/v1/graphql",
   shelbynet: "https://api.shelbynet.shelby.xyz/v1/graphql",
@@ -19,9 +19,9 @@ export const NetworkToIndexerAPI: Record<string, string> = {
  * @category Network
  */
 export const NetworkToNodeAPI: Record<string, string> = {
-  mainnet: "https://api.mainnet.aptoslabs.com/v1",
-  testnet: "https://api.testnet.aptoslabs.com/v1",
-  devnet: "https://api.devnet.aptoslabs.com/v1",
+  mainnet: "https://mainnet.movementnetwork.xyz/v1",
+  testnet: "https://testnet.movementnetwork.xyz/v1",
+  devnet: "https://devnet.movementnetwork.xyz/v1",
   shelbynet: "https://api.shelbynet.shelby.xyz/v1",
   netna: "https://api.netna.staging.aptoslabs.com/v1",
   local: "http://127.0.0.1:8080/v1",

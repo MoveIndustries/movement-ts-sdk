@@ -10,7 +10,7 @@ import {
   ChunkedAmount,
   TRANSFER_AMOUNT_CHUNK_COUNT,
 } from "./chunkedAmount";
-import { AnyNumber, HexInput } from "@aptos-labs/ts-sdk";
+import { AnyNumber, HexInput } from "@moveindustries/ts-sdk";
 import { RangeProofExecutor } from "./rangeProof";
 import { TwistedEd25519PrivateKey, TwistedEd25519PublicKey, H_RISTRETTO } from ".";
 import { TwistedElGamalCiphertext } from "./twistedElGamal";

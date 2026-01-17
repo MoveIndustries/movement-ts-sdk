@@ -28,7 +28,7 @@ import {
   NetworkToNetworkName,
   TransactionWorkerEventsEnum,
   UserTransactionResponse,
-} from "@aptos-labs/ts-sdk";
+} from "@moveindustries/ts-sdk";
 
 const APTOS_NETWORK: Network = NetworkToNetworkName[process.env.APTOS_NETWORK ?? Network.DEVNET];
 
@@ -114,8 +114,7 @@ async function main() {
     const accountsData = await Promise.all(accounts);
     accountsData.forEach((accountData) => {
       console.log(
-        `account sequence number is ${(totalTransactions * senders.length) / 2}: ${
-          accountData.sequence_number === "20"
+        `account sequence number is ${(totalTransactions * senders.length) / 2}: ${accountData.sequence_number === "20"
         }`,
       );
     });

@@ -18,7 +18,7 @@ The following signed integer TypeTag classes have been added:
 ### Creating Signed Integer TypeTags
 
 ```typescript
-import { TypeTagI8, TypeTagI16, TypeTagI32, TypeTagI64, TypeTagI128, TypeTagI256 } from '@aptos-labs/ts-sdk';
+import { TypeTagI8, TypeTagI16, TypeTagI32, TypeTagI64, TypeTagI128, TypeTagI256 } from '@moveindustries/ts-sdk';
 
 // Create signed integer type tags
 const i8Tag = new TypeTagI8();
@@ -32,7 +32,7 @@ const i256Tag = new TypeTagI256();
 ### Parsing Signed Integer Types
 
 ```typescript
-import { parseTypeTag } from '@aptos-labs/ts-sdk';
+import { parseTypeTag } from '@moveindustries/ts-sdk';
 
 // Parse signed integer types from strings
 const i8Type = parseTypeTag("i8");
@@ -46,7 +46,7 @@ const i256Type = parseTypeTag("i256");
 ### Type Checking
 
 ```typescript
-import { TypeTag, TypeTagI8 } from '@aptos-labs/ts-sdk';
+import { TypeTag, TypeTagI8 } from '@moveindustries/ts-sdk';
 
 const typeTag: TypeTag = new TypeTagI8();
 
@@ -69,7 +69,7 @@ if (typeTag.isI8()) {
 All signed integer TypeTags support BCS serialization/deserialization:
 
 ```typescript
-import { Serializer, Deserializer, TypeTag } from '@aptos-labs/ts-sdk';
+import { Serializer, Deserializer, TypeTag } from '@moveindustries/ts-sdk';
 
 // Serialize
 const serializer = new Serializer();
@@ -112,7 +112,7 @@ The `TypeTagVariants` enum has been extended with the following values:
 ## Example: Using in Transaction Arguments
 
 ```typescript
-import { parseTypeTag } from '@aptos-labs/ts-sdk';
+import { parseTypeTag } from '@moveindustries/ts-sdk';
 
 // Parse type arguments for entry functions
 const typeArgs = [

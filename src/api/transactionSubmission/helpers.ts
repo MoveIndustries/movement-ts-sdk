@@ -13,7 +13,7 @@ import { AptosConfig } from "../aptosConfig";
  *
  * @example
  * ```typescript
- * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+ * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
  *
  * const config = new AptosConfig({ network: Network.TESTNET });
  * const aptos = new Aptos(config);
@@ -77,7 +77,7 @@ export function validateFeePayerDataOnSubmission(
  *
  * @example
  * ```typescript
- * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+ * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
  *
  * const config = new AptosConfig({ network: Network.TESTNET });
  * const aptos = new Aptos(config);

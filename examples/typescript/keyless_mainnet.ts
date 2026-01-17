@@ -5,7 +5,7 @@
  * This example shows how to use the Keyless accounts on Aptos
  */
 
-import { AccountAddress, Aptos, AptosConfig, EphemeralKeyPair, Network } from "@aptos-labs/ts-sdk";
+import { AccountAddress, Aptos, AptosConfig, EphemeralKeyPair, Network } from "@moveindustries/ts-sdk";
 import * as readlineSync from "readline-sync";
 
 const TRANSFER_AMOUNT = 10; // octas

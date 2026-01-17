@@ -1,7 +1,7 @@
 import { execSync } from "child_process";
 import path from "path";
 import fs from "fs";
-import { AccountAddress } from "@aptos-labs/ts-sdk";
+import { AccountAddress } from "@moveindustries/ts-sdk";
 
 /* eslint-disable no-console */
 /* eslint-disable max-len */

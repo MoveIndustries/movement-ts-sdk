@@ -9,7 +9,7 @@ import {
   AptosConfig,
   UserTransactionResponse,
   NetworkToNetworkName,
-} from "@aptos-labs/ts-sdk";
+} from "@moveindustries/ts-sdk";
 import { compilePackage, getPackageBytesToPublish } from "./utils";
 
 const APTOS_NETWORK: Network = NetworkToNetworkName[process.env.APTOS_NETWORK ?? Network.DEVNET];

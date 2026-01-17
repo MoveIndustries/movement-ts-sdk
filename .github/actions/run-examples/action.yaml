@@ -21,7 +21,7 @@ runs:
       shell: bash
 
     # Install the CLI.
-    - run: pnpm install -g @aptos-labs/aptos-cli
+    - run: pnpm install -g @moveindustries/movement-cli
       shell: bash
 
     # Run a local testnet in the background.

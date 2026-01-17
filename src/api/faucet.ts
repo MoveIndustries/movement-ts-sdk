@@ -23,7 +23,7 @@ export class Faucet {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * async function runExample() {
    *     // Create a configuration for the Aptos client
@@ -38,7 +38,7 @@ export class Faucet {
    * ```
    * @group Faucet
    */
-  constructor(readonly config: AptosConfig) {}
+  constructor(readonly config: AptosConfig) { }
 
   /**
    * This function creates an account if it does not exist and mints the specified amount of coins into that account.
@@ -54,7 +54,7 @@ export class Faucet {
    *
    * @example
    * ```typescript
-   * import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+   * import { Aptos, AptosConfig, Network } from "@moveindustries/ts-sdk";
    *
    * const config = new AptosConfig({ network: Network.DEVNET });
    * const aptos = new Aptos(config);

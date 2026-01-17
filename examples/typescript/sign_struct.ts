@@ -15,7 +15,7 @@ import {
   Serializer,
   sleep,
   U64,
-} from "@aptos-labs/ts-sdk";
+} from "@moveindustries/ts-sdk";
 import { compilePackage, getPackageBytesToPublish } from "./utils";
 
 const ALICE_INITIAL_BALANCE = 100_000_000;

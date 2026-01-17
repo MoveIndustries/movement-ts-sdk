@@ -10,7 +10,7 @@ import {
   InputGenerateTransactionOptions,
   LedgerVersionArg,
   SimpleTransaction,
-} from "@aptos-labs/ts-sdk";
+} from "@moveindustries/ts-sdk";
 import { TwistedEd25519PublicKey, TwistedEd25519PrivateKey, ConfidentialNormalization } from "../crypto";
 import { clearBalanceCache, clearEncryptionKeyCache, getEncryptionKeyCacheKey, setCache } from "../utils/memoize";
 import {

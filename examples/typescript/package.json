@@ -35,7 +35,7 @@
   "keywords": [],
   "author": "",
   "dependencies": {
-    "@aptos-labs/ts-sdk": "link:../..",
+    "@moveindustries/ts-sdk": "link:../..",
     "@noble/curves": "2.0.0",
     "@types/readline-sync": "1.4.8",
     "dotenv": "17.2.2",

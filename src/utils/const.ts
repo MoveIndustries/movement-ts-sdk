@@ -74,7 +74,7 @@ export const ACCOUNT_ABSTRACTION_SIGNING_DATA_SALT = "APTOS::AASigningData";
 
 /**
  * Supported processor types for the indexer API, sourced from the processor_status table in the indexer database.
- * {@link https://cloud.hasura.io/public/graphiql?endpoint=https://api.mainnet.aptoslabs.com/v1/graphql}
+ * {@link https://cloud.hasura.io/public/graphiql?endpoint=https://mainnet.movementnetwork.xyz/v1/graphql}
  * @group Implementation
  * @category Utils
  */

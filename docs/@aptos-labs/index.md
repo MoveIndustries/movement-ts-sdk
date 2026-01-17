@@ -1,4 +1,4 @@
 ---
 permalink: /@aptos-labs
-redirect_to: /@aptos-labs/ts-sdk-latest
+redirect_to: /@moveindustries/ts-sdk-latest
 ---

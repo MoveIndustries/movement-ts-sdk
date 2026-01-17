@@ -5,7 +5,7 @@ import { ed25519, RistrettoPoint } from "@noble/curves/ed25519";
 import { bytesToNumberLE } from "@noble/curves/abstract/utils";
 import { H_RISTRETTO, RistPoint, TwistedEd25519PrivateKey, TwistedEd25519PublicKey } from "./twistedEd25519";
 import { ed25519GenRandom, ed25519modN } from "../utils";
-import { HexInput } from "@aptos-labs/ts-sdk";
+import { HexInput } from "@moveindustries/ts-sdk";
 import { create_kangaroo, WASMKangaroo } from "@aptos-labs/confidential-asset-wasm-bindings/pollard-kangaroo";
 import initWasm from "@aptos-labs/confidential-asset-wasm-bindings/pollard-kangaroo";
 

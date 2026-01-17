@@ -11,7 +11,7 @@ import {
   InputViewFunctionData,
   Network,
   NetworkToNetworkName,
-} from "@aptos-labs/ts-sdk";
+} from "@moveindustries/ts-sdk";
 import { compilePackage, getPackageBytesToPublish } from "./utils";
 
 /**

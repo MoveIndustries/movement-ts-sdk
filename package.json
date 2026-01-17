@@ -1,15 +1,15 @@
 {
-  "name": "@aptos-labs/ts-sdk",
-  "description": "Aptos TypeScript SDK",
+  "name": "@moveindustries/ts-sdk",
+  "description": "Movement TypeScript SDK",
   "packageManager": "pnpm@8.15.1",
   "license": "Apache-2.0",
   "engines": {
     "node": ">=20.0.0"
   },
   "bugs": {
-    "url": "https://github.com/aptos-labs/aptos-ts-sdk/issues/new/choose"
+    "url": "https://github.com/moveindustires/movement-ts-sdk/issues/new/choose"
   },
-  "homepage": "https://aptos-labs.github.io/aptos-ts-sdk/",
+  "homepage": "https://moveindustries.github.io/movement-ts-sdk/",
   "main": "dist/common/index.js",
   "module": "dist/esm/index.mjs",
   "exports": {
@@ -50,8 +50,8 @@
     "_spec": "cucumber-js -p default"
   },
   "dependencies": {
-    "@aptos-labs/aptos-cli": "^1.0.2",
-    "@aptos-labs/aptos-client": "^2.0.0",
+    "@moveindustries/movement-cli": "^1.0.2",
+    "@moveindustries/movement-client": "^2.0.0",
     "@noble/curves": "^1.9.0",
     "@noble/hashes": "^1.5.0",
     "@scure/bip32": "^1.4.0",
