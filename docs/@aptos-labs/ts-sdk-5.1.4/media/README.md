@@ -26,13 +26,13 @@ This will then print out the results of the test accordingly.
 Simply just replace the line in the associated `package.json` file:
 
 ```json
-  "aptos": "link:../../.."
+  "movement": "link:../../.."
 ```
 
 with the appropriate version e.g.:
 
 ```json
-  "aptos": "latest"
+  "movement": "latest"
 ```
 
 You should be able then simply run:

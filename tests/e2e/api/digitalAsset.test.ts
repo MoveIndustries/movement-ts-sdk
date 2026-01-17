@@ -3,9 +3,9 @@
 
 import { Account, Bool, MoveString, MoveVector, U8 } from "../../../src";
 import { FUND_AMOUNT } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
-const { aptos } = getAptosClient();
+const { movement } = getMovementClient();
 
 const collectionName = "Test Collection";
 const collectionDescription = "My new collection!";

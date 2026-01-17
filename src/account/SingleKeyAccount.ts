@@ -1,4 +1,4 @@
-import { MovementConfig } from "../api";
+import type { MovementConfig } from "../api";
 import { AccountAddress, AccountAddressInput } from "../core/accountAddress";
 import {
   AnyPublicKey,

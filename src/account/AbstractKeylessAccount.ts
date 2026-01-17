@@ -19,7 +19,7 @@ import {
 } from "../core/crypto";
 import { EphemeralCertificateVariant, HexInput, SigningScheme } from "../types";
 
-import { MovementConfig } from "../api/movementConfig";
+import type { MovementConfig } from "../api/movementConfig";
 import { Deserializer, Serializable, Serializer } from "../bcs";
 import { FederatedKeylessPublicKey } from "../core/crypto/federatedKeyless";
 import { Hex } from "../core/hex";

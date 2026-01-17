@@ -14,7 +14,7 @@ import {
 } from "../../../src";
 
 import { FUND_AMOUNT, TRANSFER_AMOUNT } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 import { EPHEMERAL_KEY_PAIR, simpleCoinTransactionHeler as simpleCoinTransactionHelper } from "../transaction/helper";
 
 export const TEST_JWT_TOKENS = [
@@ -67,7 +67,7 @@ const KEYLESS_TEST_TIMEOUT = 12000;
 
 describe("keyless api", () => {
   const ephemeralKeyPair = EPHEMERAL_KEY_PAIR;
-  const { aptos } = getAptosClient();
+  const { movement } = getMovementClient();
   const jwkAccount = Account.generate();
 
   beforeEach(async () => {
@@ -134,7 +134,7 @@ describe("keyless api", () => {
       pepper: new Uint8Array(31),
     });
     const recipient = Account.generate();
-    await expect(simpleCoinTransactionHelper(aptos, account, recipient)).rejects.toThrow(
+    await expect(simpleCoinTransactionHelper(movement, account, recipient)).rejects.toThrow(
       "JWK with kid 'test-rsa2' for issuer 'test.oidc.provider' not found.",
     );
   });
@@ -159,7 +159,7 @@ describe("keyless api", () => {
       const committedJwkTxn = await movement.signAndSubmitTransaction({ signer: jwkAccount, transaction: jwkTransaction });
       await movement.waitForTransaction({ transactionHash: committedJwkTxn.hash });
 
-      await expect(simpleCoinTransactionHelper(aptos, account, recipient)).rejects.toThrow(
+      await expect(simpleCoinTransactionHelper(movement, account, recipient)).rejects.toThrow(
         "JWK with kid 'test-rsa' for issuer 'test.federated.oidc.provider' not found",
       );
     },
@@ -185,7 +185,7 @@ describe("keyless api", () => {
             ? await movement.deriveKeylessAccount({ jwt, ephemeralKeyPair })
             : await movement.deriveKeylessAccount({ jwt, ephemeralKeyPair, jwkAddress });
         const recipient = Account.generate();
-        await simpleCoinTransactionHelper(aptos, sender, recipient);
+        await simpleCoinTransactionHelper(movement, sender, recipient);
       },
       KEYLESS_TEST_TIMEOUT,
     );
@@ -201,7 +201,7 @@ describe("keyless api", () => {
             ? KeylessAccount.create({ proof, jwt, ephemeralKeyPair, pepper })
             : FederatedKeylessAccount.create({ proof, jwt, ephemeralKeyPair, pepper, jwkAddress });
         const recipient = Account.generate();
-        await simpleCoinTransactionHelper(aptos, account, recipient);
+        await simpleCoinTransactionHelper(movement, account, recipient);
       },
       KEYLESS_TEST_TIMEOUT,
     );
@@ -214,7 +214,7 @@ describe("keyless api", () => {
             ? await movement.deriveKeylessAccount({ jwt, ephemeralKeyPair, uidKey: "email" })
             : await movement.deriveKeylessAccount({ jwt, ephemeralKeyPair, jwkAddress, uidKey: "email" });
         const recipient = Account.generate();
-        await simpleCoinTransactionHelper(aptos, sender, recipient);
+        await simpleCoinTransactionHelper(movement, sender, recipient);
       },
       KEYLESS_TEST_TIMEOUT,
     );
@@ -227,7 +227,7 @@ describe("keyless api", () => {
             ? await movement.deriveKeylessAccount({ jwt, ephemeralKeyPair, pepper: new Uint8Array(31) })
             : await movement.deriveKeylessAccount({ jwt, ephemeralKeyPair, jwkAddress, pepper: new Uint8Array(31) });
         const recipient = Account.generate();
-        await simpleCoinTransactionHelper(aptos, sender, recipient);
+        await simpleCoinTransactionHelper(movement, sender, recipient);
       },
       KEYLESS_TEST_TIMEOUT,
     );
@@ -250,7 +250,7 @@ describe("keyless api", () => {
         await sender.waitForProofFetch();
         expect(succeeded).toBeTruthy();
         const recipient = Account.generate();
-        await simpleCoinTransactionHelper(aptos, sender, recipient);
+        await simpleCoinTransactionHelper(movement, sender, recipient);
       },
       KEYLESS_TEST_TIMEOUT,
     );
@@ -325,7 +325,7 @@ describe("keyless api", () => {
               jwkAddress,
             });
         const recipient = Account.generate();
-        await simpleCoinTransactionHelper(aptos, sender, recipient);
+        await simpleCoinTransactionHelper(movement, sender, recipient);
       },
       KEYLESS_TEST_TIMEOUT,
     );

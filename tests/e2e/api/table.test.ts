@@ -1,6 +1,6 @@
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
-const { aptos } = getAptosClient();
+const { movement } = getMovementClient();
 let resource: Supply;
 
 type Supply = {

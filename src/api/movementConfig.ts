@@ -215,11 +215,6 @@ export class MovementConfig {
         return NetworkToNodeAPI[this.network];
       case MovementApiType.FAUCET:
         if (this.faucet !== undefined) return this.faucet;
-        if (this.network === Network.TESTNET) {
-          throw new Error(
-            "There is no way to programmatically mint testnet APT, you must use the minting site at https://movement.dev/network/faucet",
-          );
-        }
         if (this.network === Network.MAINNET) {
           throw new Error("There is no mainnet faucet");
         }

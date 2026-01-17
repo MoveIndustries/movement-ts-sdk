@@ -2,9 +2,9 @@ import { Account } from "../../../src/account";
 import * as AccountQueries from "../../../src/internal/account";
 import { AccountSequenceNumber } from "../../../src/transactions/management/accountSequenceNumber";
 import { longTestTimeout } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
-const { aptos, config: movementConfig } = getAptosClient();
+const { movement, config: movementConfig } = getMovementClient();
 
 const account = Account.generate();
 

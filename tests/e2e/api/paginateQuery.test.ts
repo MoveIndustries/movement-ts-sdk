@@ -1,7 +1,7 @@
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
 describe("PaginateQuery", () => {
-  const { aptos } = getAptosClient();
+  const { movement } = getMovementClient();
 
   test("it should paginate correctly on fullnode queries", async () => {
     const transactions = await movement.getTransactions();

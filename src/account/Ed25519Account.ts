@@ -1,4 +1,4 @@
-import { MovementConfig } from "../api";
+import type { MovementConfig } from "../api";
 import { AccountAddress, AccountAddressInput } from "../core/accountAddress";
 import { Ed25519PrivateKey, Ed25519PublicKey, Ed25519Signature, Signature } from "../core/crypto";
 import { AccountAuthenticatorEd25519 } from "../transactions/authenticator/account";

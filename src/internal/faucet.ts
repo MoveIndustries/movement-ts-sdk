@@ -20,9 +20,6 @@ import { waitForTransaction } from "./transaction";
  * Funds an account with a specified amount of tokens from the Movement faucet.
  * This function is useful for quickly providing a new or existing account with tokens to facilitate transactions.
  *
- * Note that only devnet has a publicly accessible faucet. For testnet, you must use
- * the minting page at https://movement.dev/network/faucet.
- *
  * @param args - The arguments for funding the account.
  * @param args.movementConfig - The configuration settings for connecting to the Movement network.
  * @param args.accountAddress - The address of the account to be funded.
@@ -42,17 +39,19 @@ export async function fundAccount(args: {
 }): Promise<UserTransactionResponse> {
   const { movementConfig, accountAddress, amount, options } = args;
   const timeout = options?.timeoutSecs || DEFAULT_TXN_TIMEOUT_SEC;
-  const { data } = await postAptosFaucet<any, { txn_hashes: Array<string> }>({
+  // Movement faucet uses /mint endpoint with query params
+  const { data } = await postAptosFaucet<any, Array<string>>({
     movementConfig,
-    path: "fund",
-    body: {
+    path: "mint",
+    params: {
       address: AccountAddress.from(accountAddress).toString(),
       amount,
     },
     originMethod: "fundAccount",
   });
 
-  const txnHash = data.txn_hashes[0];
+  // Movement faucet returns array of transaction hashes directly
+  const txnHash = data[0];
 
   const res = await waitForTransaction({
     movementConfig,

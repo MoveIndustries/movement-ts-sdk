@@ -3,9 +3,9 @@ import { Account } from "../../../src/account";
 import { TransactionWorker } from "../../../src/transactions/management/transactionWorker";
 import { InputGenerateTransactionPayloadData } from "../../../src/transactions/types";
 import { longTestTimeout } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
-const { aptos, config: movementConfig } = getAptosClient();
+const { movement, config: movementConfig } = getMovementClient();
 
 const sender = Account.generate();
 const recipient = Account.generate();

@@ -1,4 +1,4 @@
-import { MovementConfig } from "../../api";
+import type { MovementConfig } from "../../api";
 import { Serializable } from "../../bcs";
 import { HexInput } from "../../types";
 import { AuthenticationKey } from "../authenticationKey";

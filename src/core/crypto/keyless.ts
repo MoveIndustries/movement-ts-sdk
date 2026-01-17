@@ -10,7 +10,7 @@ import { sha3_256 } from "@noble/hashes/sha3";
 import { encode } from "js-base64";
 import { JwtPayload, jwtDecode } from "jwt-decode";
 import { generateSigningMessage } from "../..";
-import { MovementConfig } from "../../api/movementConfig";
+import type { MovementConfig } from "../../api/movementConfig";
 import { Deserializer, Serializable, Serializer } from "../../bcs";
 import { getAptosFullNode } from "../../client";
 import { KeylessError, KeylessErrorType } from "../../errors";

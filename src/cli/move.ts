@@ -33,7 +33,7 @@ export class Move {
     showStdout?: boolean;
   }): Promise<{ output: string }> {
     const { network, profile, extraArguments, showStdout } = args;
-    const cliArgs = ["aptos", "init", `--network=${network ?? "local"}`, `--profile=${profile ?? "default"}`];
+    const cliArgs = ["movement", "init", `--network=${network ?? "local"}`, `--profile=${profile ?? "default"}`];
 
     if (extraArguments) {
       cliArgs.push(...extraArguments);
@@ -62,7 +62,7 @@ export class Move {
     showStdout?: boolean;
   }): Promise<{ output: string }> {
     const { packageDirectoryPath, namedAddresses, extraArguments, showStdout } = args;
-    const cliArgs = ["aptos", "move", "compile", "--package-dir", packageDirectoryPath];
+    const cliArgs = ["movement", "move", "compile", "--package-dir", packageDirectoryPath];
 
     const addressesMap = this.parseNamedAddresses(namedAddresses);
 
@@ -94,7 +94,7 @@ export class Move {
     showStdout?: boolean;
   }): Promise<{ output: string }> {
     const { packageDirectoryPath, namedAddresses, extraArguments, showStdout } = args;
-    const cliArgs = ["aptos", "move", "test", "--package-dir", packageDirectoryPath];
+    const cliArgs = ["movement", "move", "test", "--package-dir", packageDirectoryPath];
 
     const addressesMap = this.parseNamedAddresses(namedAddresses);
 
@@ -129,7 +129,7 @@ export class Move {
   }): Promise<{ output: string }> {
     const { packageDirectoryPath, namedAddresses, profile, extraArguments, showStdout } = args;
     const cliArgs = [
-      "aptos",
+      "movement",
       "move",
       "publish",
       "--package-dir",
@@ -180,7 +180,7 @@ export class Move {
   }): Promise<{ objectAddress: string }> {
     const { packageDirectoryPath, addressName, namedAddresses, profile, extraArguments, showStdout } = args;
     const cliArgs = [
-      "aptos",
+      "movement",
       "move",
       "create-object-and-publish-package",
       "--package-dir",
@@ -227,7 +227,7 @@ export class Move {
   }): Promise<{ output: string }> {
     const { packageDirectoryPath, objectAddress, namedAddresses, profile, extraArguments, showStdout } = args;
     const cliArgs = [
-      "aptos",
+      "movement",
       "move",
       "upgrade-object-package",
       "--package-dir",
@@ -270,7 +270,7 @@ export class Move {
   }): Promise<{ output: string }> {
     const { outputFile, packageDirectoryPath, namedAddresses, extraArguments, showStdout } = args;
     const cliArgs = [
-      "aptos",
+      "movement",
       "move",
       "build-publish-payload",
       "--json-output-file",
@@ -313,7 +313,7 @@ export class Move {
   }): Promise<{ output: string }> {
     const { compiledScriptPath, profile, extraArguments, showStdout } = args;
     const cliArgs = [
-      "aptos",
+      "movement",
       "move",
       "run-script",
       "--compiled-script-path",
@@ -335,7 +335,7 @@ export class Move {
     showStdout?: boolean;
   }): Promise<{ output: string; result?: any }> {
     const { network, transactionId, extraArguments, showStdout } = args;
-    const cliArgs = ["aptos", "move", "replay", "--profile-gas", "--network", network, "--txn-id", transactionId];
+    const cliArgs = ["movement", "move", "replay", "--profile-gas", "--network", network, "--txn-id", transactionId];
 
     if (extraArguments) {
       cliArgs.push(...extraArguments);

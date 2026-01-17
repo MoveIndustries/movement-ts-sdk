@@ -3,10 +3,10 @@
 
 import { Account } from "../../../src";
 import { FUND_AMOUNT } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
 // use it here since all tests use the same configuration
-const { aptos } = getAptosClient();
+const { movement } = getMovementClient();
 
 // Disable these tests for now until we can test against LOCAL
 describe("Collection", () => {

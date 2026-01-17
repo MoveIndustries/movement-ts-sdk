@@ -29,7 +29,7 @@ function execCmdBuffer(command: string): Buffer {
 }
 
 export async function publishAnsContract(
-  aptos: Movement,
+  movement: Movement,
 ): Promise<{ address: AccountAddress; privateKey: Ed25519PrivateKey }> {
   const ret = {
     address: AccountAddress.fromString(LOCAL_ANS_ACCOUNT_ADDRESS),
@@ -61,7 +61,7 @@ export async function publishAnsContract(
     // If we're using a local CLI we just use the temp dir directly.
     console.log("---running CLI using local binary---");
     // The command we use to run the CLI.
-    const cliInvocation = "aptos";
+    const cliInvocation = "movement";
     // Where the CLI should look to find the ANS repo.
     const repoDir = tempDir;
 

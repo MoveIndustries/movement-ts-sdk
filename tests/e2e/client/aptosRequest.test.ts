@@ -3,6 +3,7 @@ import {
   aptosRequest,
   generateSignedTransaction,
   GraphqlQuery,
+  MovementApiError,
   MovementApiType,
   NetworkToIndexerAPI,
   NetworkToNodeAPI,
@@ -10,10 +11,10 @@ import {
 } from "../../../src";
 import { VERSION } from "../../../src/version";
 import { longTestTimeout } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 import { singleSignerScriptBytecode } from "../transaction/helper";
 
-const { aptos, config } = getAptosClient();
+const { movement, config } = getMovementClient();
 
 const fullnodeUrl = config.fullnode ?? NetworkToNodeAPI[config.network];
 const indexerUrl = config.indexer ?? NetworkToIndexerAPI[config.network];

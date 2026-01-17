@@ -2,7 +2,7 @@ import { AbstractedAccount, Account, AccountAddress, Ed25519PrivateKey, Hex, Mov
 import { DerivableAbstractedAccount } from "../../../src/account/DerivableAbstractedAccount";
 import { Ed25519Account } from "../../../src/account/Ed25519Account";
 import { ed25519, FUND_AMOUNT } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 import {
   addPermissionDelegationScriptBytecode,
   publishAnyAuthenticatorAAPackage,
@@ -10,7 +10,7 @@ import {
 } from "../transaction/helper";
 
 describe("abstraction api", () => {
-  const { aptos } = getAptosClient({ network: Network.LOCAL });
+  const { movement } = getMovementClient();
 
   describe("account abstraction", () => {
     // disable permission delegation write until it is fixed in prologue
@@ -69,7 +69,7 @@ describe("abstraction api", () => {
       beforeAll(async () => {
         await movement.fundAccount({ accountAddress: alice.accountAddress, amount: FUND_AMOUNT });
         await movement.fundAccount({ accountAddress: deployer.accountAddress, amount: FUND_AMOUNT });
-        await publishAnyAuthenticatorAAPackage(aptos, deployer);
+        await publishAnyAuthenticatorAAPackage(movement, deployer);
       });
 
       it("should enable account abstraction", async () => {
@@ -129,7 +129,7 @@ describe("abstraction api", () => {
       beforeAll(async () => {
         await movement.fundAccount({ accountAddress: alice.accountAddress, amount: FUND_AMOUNT });
         await movement.fundAccount({ accountAddress: deployer.accountAddress, amount: FUND_AMOUNT });
-        await publishHelloWorldAAPackage(aptos, deployer);
+        await publishHelloWorldAAPackage(movement, deployer);
       });
 
       it("should enable account abstraction", async () => {

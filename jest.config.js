@@ -10,6 +10,11 @@ module.exports = {
   preset: "ts-jest",
   moduleNameMapper: {
     "^(\\.{1,2}/.*)\\.js$": "$1",
+    // Use built output to avoid circular dependency issues with ts-jest
+    "^../../src$": "<rootDir>/dist/common/index.js",
+    "^../../src/(.*)$": "<rootDir>/src/$1",
+    "^../../../src$": "<rootDir>/dist/common/index.js",
+    "^../../../src/(.*)$": "<rootDir>/src/$1",
   },
   testEnvironment: "node",
   coveragePathIgnorePatterns: [

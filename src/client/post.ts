@@ -178,9 +178,6 @@ export async function postAptosIndexer<Req extends {}, Res extends {}>(
  * Sends a request to the Movement faucet to obtain test tokens.
  * This function modifies the provided configuration to ensure that the API_KEY is not included in the request.
  *
- * Note that only devnet has a publicly accessible faucet. For testnet, you must use
- * the minting page at https://movement.dev/network/faucet.
- *
  * @param options - The options for the request.
  * @param options.movementConfig - The configuration settings for the Movement client.
  * @param options.movementConfig.clientConfig - The client-specific configuration settings.

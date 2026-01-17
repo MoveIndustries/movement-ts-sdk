@@ -28,7 +28,7 @@ import {
   U64,
 } from "../../../src";
 import { FUND_AMOUNT, longTestTimeout } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 import {
   EPHEMERAL_KEY_PAIR,
   fundAccounts,
@@ -37,15 +37,15 @@ import {
   TYPED_SCRIPT_TEST,
 } from "./helper";
 
-const { aptos, config } = getAptosClient();
+const { movement, config } = getMovementClient();
 
 /* eslint-disable max-len */
 describe("transaction builder", () => {
   // TODO: The example function deployed here has all the arguments backwards from normal transfers, we should fix that
   const contractPublisherAccount = Account.generate();
   beforeAll(async () => {
-    await fundAccounts(aptos, [contractPublisherAccount]);
-    await publishTransferPackage(aptos, contractPublisherAccount);
+    await fundAccounts(movement, [contractPublisherAccount]);
+    await publishTransferPackage(movement, contractPublisherAccount);
   }, longTestTimeout);
   describe("generate transaction payload", () => {
     test("it generates a script transaction payload", async () => {

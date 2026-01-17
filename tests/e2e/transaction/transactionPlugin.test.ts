@@ -10,7 +10,7 @@ import {
   TransactionSubmitter,
 } from "../../../src";
 import { longTestTimeout } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 import { fundAccounts, publishTransferPackage } from "./helper";
 
 // Global state to track plugin calls
@@ -116,15 +116,15 @@ class OverrideTransactionSubmitter implements TransactionSubmitter {
 }
 
 describe("transaction plugin", () => {
-  const { aptos } = getAptosClient();
+  const { movement } = getMovementClient();
   const contractPublisherAccount = Account.generate();
   const senderAccount = Account.generate();
   const receiverAccount = Account.generate();
   const otherAccount = Account.generate();
 
   beforeAll(async () => {
-    await fundAccounts(aptos, [contractPublisherAccount, senderAccount, receiverAccount, otherAccount]);
-    await publishTransferPackage(aptos, contractPublisherAccount);
+    await fundAccounts(movement, [contractPublisherAccount, senderAccount, receiverAccount, otherAccount]);
+    await publishTransferPackage(movement, contractPublisherAccount);
   }, longTestTimeout);
 
   beforeEach(() => {
@@ -133,7 +133,7 @@ describe("transaction plugin", () => {
 
   describe("ignore transaction submitter", () => {
     test("setIgnoreTransactionSubmitter toggles behavior correctly", async () => {
-      const { aptos } = getAptosClient({
+      const { movement } = getMovementClient({
         pluginSettings: {
           TRANSACTION_SUBMITTER: new MockTransactionSubmitter(),
         },
@@ -201,7 +201,7 @@ describe("transaction plugin", () => {
   describe("TransactionSubmitter plugin", () => {
     test("uses plugin when configured", async () => {
       // Create a new config with the mock plugin
-      const { aptos } = getAptosClient({
+      const { movement } = getMovementClient({
         pluginSettings: {
           TRANSACTION_SUBMITTER: new MockTransactionSubmitter(),
         },
@@ -236,7 +236,7 @@ describe("transaction plugin", () => {
     });
 
     test("passes through all parameters to plugin", async () => {
-      const { aptos } = getAptosClient({
+      const { movement } = getMovementClient({
         pluginSettings: {
           TRANSACTION_SUBMITTER: new MockTransactionSubmitter(),
         },
@@ -274,7 +274,7 @@ describe("transaction plugin", () => {
     });
 
     test("uses plugin for multi-agent transactions", async () => {
-      const { aptos } = getAptosClient({
+      const { movement } = getMovementClient({
         pluginSettings: {
           TRANSACTION_SUBMITTER: new MockTransactionSubmitter(),
         },
@@ -342,7 +342,7 @@ describe("transaction plugin", () => {
 
   describe("transactionSubmitter field override", () => {
     test("overrides configured submitter with transactionSubmitter field", async () => {
-      const { aptos } = getAptosClient({
+      const { movement } = getMovementClient({
         pluginSettings: {
           TRANSACTION_SUBMITTER: new MockTransactionSubmitter(),
         },
@@ -378,7 +378,7 @@ describe("transaction plugin", () => {
     });
 
     test("ignores configured submitter when transactionSubmitter is set to null", async () => {
-      const { aptos } = getAptosClient({
+      const { movement } = getMovementClient({
         pluginSettings: {
           TRANSACTION_SUBMITTER: new MockTransactionSubmitter(),
         },
@@ -445,7 +445,7 @@ describe("transaction plugin", () => {
     });
 
     test("override submitter works with multi-agent transactions", async () => {
-      const { aptos } = getAptosClient({
+      const { movement } = getMovementClient({
         pluginSettings: {
           TRANSACTION_SUBMITTER: new MockTransactionSubmitter(),
         },

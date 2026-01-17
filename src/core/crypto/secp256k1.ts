@@ -4,7 +4,7 @@
 import { secp256k1 } from "@noble/curves/secp256k1";
 import { sha3_256 } from "@noble/hashes/sha3";
 import { HDKey } from "@scure/bip32";
-import { MovementConfig } from "../../api";
+import type { MovementConfig } from "../../api";
 import { Deserializer, Serializable, Serializer } from "../../bcs";
 import { HexInput, PrivateKeyVariants } from "../../types";
 import { Hex } from "../hex";

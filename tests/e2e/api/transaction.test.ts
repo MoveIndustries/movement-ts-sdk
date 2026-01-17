@@ -4,10 +4,10 @@
 import { Account, TransactionResponse, U64 } from "../../../src";
 import { longWaitForTransaction } from "../../../src/internal/transaction";
 import { FUND_AMOUNT } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
 // use it here since all tests use the same configuration
-const { aptos } = getAptosClient();
+const { movement } = getMovementClient();
 
 describe("transaction api", () => {
   test("it queries for the network estimated gas price", async () => {

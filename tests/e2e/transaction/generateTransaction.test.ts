@@ -11,17 +11,17 @@ import {
   U64,
 } from "../../../src";
 import { longTestTimeout } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 import { fundAccounts, singleSignerScriptBytecode } from "./helper";
 
 describe("generate transaction", () => {
-  const { aptos } = getAptosClient();
+  const { movement } = getMovementClient();
   const senderAccount = Account.generate();
   const recieverAccounts = [Account.generate(), Account.generate()];
   const secondarySignerAccount = Account.generate();
   const feePayerAccount = Account.generate();
   beforeAll(async () => {
-    await fundAccounts(aptos, [senderAccount, ...recieverAccounts, secondarySignerAccount, feePayerAccount]);
+    await fundAccounts(movement, [senderAccount, ...recieverAccounts, secondarySignerAccount, feePayerAccount]);
   }, longTestTimeout);
 
   describe("single signer transaction", () => {

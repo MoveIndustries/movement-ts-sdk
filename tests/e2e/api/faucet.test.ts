@@ -3,11 +3,11 @@
 
 import { Account, InputViewFunctionJsonData } from "../../../src";
 import { FUND_AMOUNT } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
 describe("Faucet", () => {
   test("it should fund an account", async () => {
-    const { aptos } = getAptosClient();
+    const { movement } = getMovementClient();
     const testAccount = Account.generate();
 
     // Fund the account

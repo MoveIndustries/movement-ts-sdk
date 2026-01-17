@@ -1,18 +1,18 @@
 import {
   Account,
   Deserializer,
+  Movement,
   MovementConfig,
   Network,
   RawTransaction,
   TransactionPayloadEntryFunction
 } from "../../../src";
 import { FUND_AMOUNT, longTestTimeout } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
 describe("coin", () => {
   test("it generates a transfer coin transaction with MovementCoin coin type", async () => {
-    const config = new MovementConfig({ network: Network.LOCAL });
-    const movement = new Movement(config);
+    const { movement } = getMovementClient();
     const sender = Account.generate();
     const recipient = Account.generate();
     await movement.fundAccount({ accountAddress: sender.accountAddress, amount: FUND_AMOUNT });
@@ -37,11 +37,11 @@ describe("coin", () => {
 
     expect(typeArg.value.address.toString()).toBe("0x1");
     expect(typeArg.value.moduleName.identifier).toBe("aptos_coin");
-    expect(typeArg.value.name.identifier).toBe("MovementCoin");
+    expect(typeArg.value.name.identifier).toBe("AptosCoin");
   });
 
   test("it generates a transfer coin transaction with a custom coin type", async () => {
-    const { aptos } = getAptosClient();
+    const { movement } = getMovementClient();
     const sender = Account.generate();
     const recipient = Account.generate();
     await movement.fundAccount({ accountAddress: sender.accountAddress, amount: FUND_AMOUNT });
@@ -73,7 +73,7 @@ describe("coin", () => {
   test(
     "it transfers APT coin amount from sender to recipient",
     async () => {
-      const { aptos } = getAptosClient();
+      const { movement } = getMovementClient();
       const sender = Account.generate();
       const recipient = Account.generate();
 

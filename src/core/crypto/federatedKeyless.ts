@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { Signature } from "..";
-import { MovementConfig } from "../../api";
+import type { MovementConfig } from "../../api";
 import { Deserializer, Serializer } from "../../bcs";
 import { AnyPublicKeyVariant, HexInput, SigningScheme } from "../../types";
 import { AccountAddress, AccountAddressInput } from "../accountAddress";

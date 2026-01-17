@@ -9,7 +9,7 @@ import {
   U64,
 } from "../../../src";
 import { ed25519, longTestTimeout } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 import {
   createAndFundMultisigAccount,
   createMultisigTransaction,
@@ -20,7 +20,7 @@ import {
 } from "./helper";
 
 describe("transaction simulation", () => {
-  const { aptos } = getAptosClient();
+  const { movement } = getMovementClient();
   const contractPublisherAccount = Account.generate();
   const singleSignerED25519SenderAccount = Account.generate({ scheme: SigningSchemeInput.Ed25519, legacy: false });
   const legacyED25519SenderAccount = Account.generate();
@@ -46,7 +46,7 @@ describe("transaction simulation", () => {
     functionArguments: [1, receiverAccounts[0].accountAddress],
   };
   beforeAll(async () => {
-    await fundAccounts(aptos, [
+    await fundAccounts(movement, [
       contractPublisherAccount,
       singleSignerED25519SenderAccount,
       singleSignerSecp256k1Account,
@@ -56,7 +56,7 @@ describe("transaction simulation", () => {
       secondarySignerAccount,
       feePayerAccount,
     ]);
-    await publishTransferPackage(aptos, contractPublisherAccount);
+    await publishTransferPackage(movement, contractPublisherAccount);
   }, longTestTimeout);
   describe("Single Sender ED25519", () => {
     beforeAll(async () => {

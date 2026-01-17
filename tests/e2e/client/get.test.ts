@@ -1,5 +1,5 @@
 import { LedgerInfo, MovementConfig, getAptosFullNode } from "../../../src";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
 const partialConfig = new MovementConfig({
   clientConfig: {
@@ -10,7 +10,7 @@ const partialConfig = new MovementConfig({
   indexerConfig: { HEADERS: { indexerHeader: "indexer-header" } },
   faucetConfig: { HEADERS: { faucetHeader: "faucet-header" }, AUTH_TOKEN: "auth-token" },
 });
-const { config: movementConfig } = getAptosClient(partialConfig);
+const { config: movementConfig } = getMovementClient(partialConfig);
 
 // All tests are expected to catch becuase server call will fail
 // due to a fake API_KEY. But that is ok because we just want

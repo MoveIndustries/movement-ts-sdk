@@ -1,7 +1,7 @@
 // Copyright © Move Industries
 // SPDX-License-Identifier: Apache-2.0
 
-import { MovementConfig } from "../../api";
+import type { MovementConfig } from "../../api";
 import { Deserializer, Serializer } from "../../bcs";
 import { SigningScheme as AuthenticationKeyScheme, HexInput } from "../../types";
 import { AuthenticationKey } from "../authenticationKey";

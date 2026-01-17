@@ -2,10 +2,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { GraphqlQuery, InputViewFunctionData, InputViewFunctionJsonData, Network, ProcessorType } from "../../../src";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
 describe("general api", () => {
-  const { aptos } = getAptosClient();
+  const { movement } = getMovementClient();
 
   test("it fetches ledger info", async () => {
     const ledgerInfo = await movement.getLedgerInfo();
@@ -183,7 +183,7 @@ describe("general api", () => {
 });
 
 describe("general api (requires testnet)", () => {
-  const { aptos } = getAptosClient({ network: Network.TESTNET });
+  const { movement } = getMovementClient({ network: Network.TESTNET });
   test("it fetches data with a custom graphql query", async () => {
     const query: GraphqlQuery = {
       query: `query MyQuery {

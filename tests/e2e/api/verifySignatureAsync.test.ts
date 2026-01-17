@@ -25,10 +25,10 @@ import {
   secp256k1TestObject,
   singleSignerED25519
 } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
 describe("verifySignatureAsync", () => {
-  const { aptos } = getAptosClient();
+  const { movement } = getMovementClient();
   const movementConfig = movement.config;
 
   it("signs a message with single signer Secp256k1 scheme and verifies successfully", async () => {

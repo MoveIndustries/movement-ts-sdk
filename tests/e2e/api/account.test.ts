@@ -7,6 +7,7 @@ import {
   AccountAddress,
   CommittedTransactionResponse,
   Ed25519PrivateKey,
+  Movement,
   MovementConfig,
   MultiEd25519Account,
   MultiEd25519PublicKey,
@@ -15,7 +16,7 @@ import {
   SigningSchemeInput,
   U64
 } from "../../../src";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 import { simpleCoinTransactionHeler } from "../transaction/helper";
 
 describe("account api", () => {
@@ -23,7 +24,7 @@ describe("account api", () => {
 
   describe("fetch data", () => {
     test("it fetches account data", async () => {
-      const { aptos } = getAptosClient();
+      const { movement } = getMovementClient();
       const data = await movement.getAccountInfo({
         accountAddress: "0x1",
       });
@@ -34,7 +35,7 @@ describe("account api", () => {
     });
 
     test("it fetches account modules", async () => {
-      const { aptos } = getAptosClient();
+      const { movement } = getMovementClient();
       const data = await movement.getAccountModules({
         accountAddress: "0x1",
       });
@@ -42,8 +43,7 @@ describe("account api", () => {
     });
 
     test("it fetches account modules with a limit", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       const data = await movement.getAccountModules({
         accountAddress: "0x1",
         options: {
@@ -54,8 +54,7 @@ describe("account api", () => {
     });
 
     test("it fetches account modules with pagination", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       let { modules, cursor } = await movement.getAccountModulesPage({
         accountAddress: "0x1",
         options: {
@@ -81,8 +80,7 @@ describe("account api", () => {
     });
 
     test("it fetches an account module", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       const data = await movement.getAccountModule({
         accountAddress: "0x1",
         moduleName: "coin",
@@ -91,8 +89,7 @@ describe("account api", () => {
     });
 
     test("it fetches account resources", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       const data = await movement.getAccountResources({
         accountAddress: "0x1",
       });
@@ -100,8 +97,7 @@ describe("account api", () => {
     });
 
     test("it fetches account resources with a limit", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       const data = await movement.getAccountResources({
         accountAddress: "0x1",
         options: {
@@ -112,8 +108,7 @@ describe("account api", () => {
     });
 
     test("it fetches account resources with pagination", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       const { resources, cursor } = await movement.getAccountResourcesPage({
         accountAddress: "0x1",
         options: {
@@ -135,8 +130,7 @@ describe("account api", () => {
     });
 
     test("it fetches an account resource without a type", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       const data = await movement.getAccountResource({
         accountAddress: "0x1",
         resourceType: "0x1::account::Account",
@@ -148,8 +142,7 @@ describe("account api", () => {
     });
 
     test("it fetches an account resource typed", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       type AccountRes = {
         authentication_key: string;
         coin_register_events: {
@@ -185,8 +178,7 @@ describe("account api", () => {
     });
 
     test("it fetches account transactions", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       const senderAccount = Account.generate();
       await movement.fundAccount({
         accountAddress: senderAccount.accountAddress,
@@ -216,8 +208,7 @@ describe("account api", () => {
     });
 
     test("it fetches account transactions count", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       const senderAccount = Account.generate();
       const response = await movement.fundAccount({
         accountAddress: senderAccount.accountAddress,
@@ -232,8 +223,7 @@ describe("account api", () => {
     });
 
     test("it fetches account coins data", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       const senderAccount = Account.generate();
       const fundTxn = await movement.fundAccount({
         accountAddress: senderAccount.accountAddress,
@@ -249,8 +239,7 @@ describe("account api", () => {
     });
 
     test("it fetches account coins count", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       const senderAccount = Account.generate();
       const fundTxn = await movement.fundAccount({
         accountAddress: senderAccount.accountAddress,
@@ -265,8 +254,7 @@ describe("account api", () => {
     });
 
     test("it fetches account's coin amount", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       const senderAccount = Account.generate();
       const fundTxn = await movement.fundAccount({
         accountAddress: senderAccount.accountAddress,
@@ -316,8 +304,7 @@ describe("account api", () => {
     });
 
     test("it fetches account balance by coin type (APT)", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       const account = Account.generate();
 
       const fundTxn = await movement.fundAccount({
@@ -334,8 +321,7 @@ describe("account api", () => {
     });
 
     test("it fetches account balance by FA metadata address (APT)", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       const account = Account.generate();
 
       const fundTxn = await movement.fundAccount({
@@ -352,8 +338,7 @@ describe("account api", () => {
     });
 
     test("lookupOriginalAccountAddress - Look up account address before key rotation", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       const account = Account.generate();
 
       // Fund and create account on-chain
@@ -366,8 +351,7 @@ describe("account api", () => {
     });
 
     test("it fetches account owned token from collection", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
       const creator = Account.generate();
       await movement.fundAccount({ accountAddress: creator.accountAddress, amount: FUND_AMOUNT });
       const collectionCreationTransaction = await movement.createCollectionTransaction({
@@ -412,7 +396,6 @@ describe("account api", () => {
       const config = new MovementConfig({
         network: Network.LOCAL,
       });
-      const movement = new Movement(config);
 
       test("single sender ed25519", async () => {
         const account = Account.generate({ scheme: SigningSchemeInput.Ed25519, legacy: false });
@@ -458,8 +441,7 @@ describe("account api", () => {
 
   describe("Key Rotation", () => {
     test("it should rotate ed25519 to ed25519 auth key correctly", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
 
       // Current Account
       const account = Account.generate({ scheme: SigningSchemeInput.Ed25519, legacy: true });
@@ -486,12 +468,11 @@ describe("account api", () => {
         privateKey: rotateToPrivateKey,
         address: account.accountAddress,
       });
-      await simpleCoinTransactionHeler(aptos, rotatedAccount, Account.generate());
+      await simpleCoinTransactionHeler(movement, rotatedAccount, Account.generate());
     }, 10000);
 
     test("it should rotate ed25519 to multi-ed25519 auth key correctly", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
 
       // Current Account
       const account = Account.generate({ scheme: SigningSchemeInput.Ed25519, legacy: true });
@@ -525,12 +506,11 @@ describe("account api", () => {
         signers: [mk1.privateKey],
         address: account.accountAddress,
       });
-      await simpleCoinTransactionHeler(aptos, rotatedAccount, Account.generate());
+      await simpleCoinTransactionHeler(movement, rotatedAccount, Account.generate());
     }, 10000);
 
     test("it should rotate ed25519 to multikey auth key correctly", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
 
       // Current Account
       const account = Account.generate({ scheme: SigningSchemeInput.Ed25519, legacy: true });
@@ -563,12 +543,11 @@ describe("account api", () => {
         signaturesRequired: 1,
         signers: [mk1],
       });
-      await simpleCoinTransactionHeler(aptos, rotatedAccount, Account.generate());
+      await simpleCoinTransactionHeler(movement, rotatedAccount, Account.generate());
     }, 10000);
 
     test("it should rotate ed25519 to unverified auth key correctly", async () => {
-      const config = new MovementConfig({ network: Network.LOCAL });
-      const movement = new Movement(config);
+      const { movement, config } = getMovementClient();
 
       // Current Account
       const account = Account.generate({ scheme: SigningSchemeInput.Ed25519, legacy: true });
@@ -595,13 +574,12 @@ describe("account api", () => {
         privateKey: newAccount.privateKey,
         address: newAccount.accountAddress,
       });
-      await simpleCoinTransactionHeler(aptos, rotatedAccount, Account.generate());
+      await simpleCoinTransactionHeler(movement, rotatedAccount, Account.generate());
     }, 10000);
   });
 
   describe("Account Derivation APIs", () => {
-    const config = new MovementConfig({ network: Network.LOCAL });
-    const movement = new Movement(config);
+    const { movement, config } = getMovementClient();
 
     const minterAccount = Account.generate();
 

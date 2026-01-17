@@ -1,4 +1,4 @@
-import { MovementConfig } from "../../api";
+import type { MovementConfig } from "../../api";
 import { Deserializer } from "../../bcs/deserializer";
 import { Serializer } from "../../bcs/serializer";
 import { AnyPublicKeyVariant, SigningScheme as AuthenticationKeyScheme, HexInput } from "../../types";

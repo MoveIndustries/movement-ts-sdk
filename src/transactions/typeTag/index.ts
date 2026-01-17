@@ -887,7 +887,7 @@ export class StructTag extends Serializable {
  * @category Transactions
  */
 export function aptosCoinStructTag(): StructTag {
-  return new StructTag(AccountAddress.ONE, new Identifier("aptos_coin"), new Identifier("MovementCoin"), []);
+  return new StructTag(AccountAddress.ONE, new Identifier("aptos_coin"), new Identifier("AptosCoin"), []);
 }
 
 /**

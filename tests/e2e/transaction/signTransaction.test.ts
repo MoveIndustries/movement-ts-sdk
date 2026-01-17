@@ -17,10 +17,10 @@ import {
   WebAuthnSignature
 } from "../../../src";
 import { longTestTimeout } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 import { fundAccounts, publishTransferPackage, singleSignerScriptBytecode } from "./helper";
 
-const { aptos } = getAptosClient();
+const { movement } = getMovementClient();
 
 describe("sign transaction", () => {
   const contractPublisherAccount = Account.generate();
@@ -31,7 +31,7 @@ describe("sign transaction", () => {
   const secondarySignerAccount = Account.generate();
   const feePayerAccount = Account.generate();
   beforeAll(async () => {
-    await fundAccounts(aptos, [
+    await fundAccounts(movement, [
       contractPublisherAccount,
       singleSignerED25519SenderAccount,
       legacyED25519SenderAccount,
@@ -40,7 +40,7 @@ describe("sign transaction", () => {
       secondarySignerAccount,
       feePayerAccount,
     ]);
-    await publishTransferPackage(aptos, contractPublisherAccount);
+    await publishTransferPackage(movement, contractPublisherAccount);
   }, longTestTimeout);
 
   describe("it returns the current account authenticator", () => {

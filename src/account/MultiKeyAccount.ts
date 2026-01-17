@@ -1,7 +1,7 @@
 // Copyright © Move Industries
 // SPDX-License-Identifier: Apache-2.0
 
-import { MovementConfig } from "../api/movementConfig";
+import type { MovementConfig } from "../api/movementConfig";
 import { AccountAddress, AccountAddressInput } from "../core/accountAddress";
 import { MultiKey, MultiKeySignature, PublicKey } from "../core/crypto";
 import { AccountAuthenticatorMultiKey } from "../transactions/authenticator/account";

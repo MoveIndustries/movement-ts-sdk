@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { Account, APTOS_COIN, APTOS_FA } from "../../../src";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
-const { aptos } = getAptosClient();
+const { movement } = getMovementClient();
 
 describe("FungibleAsset", () => {
   test("it should fetch fungible asset metadata", async () => {

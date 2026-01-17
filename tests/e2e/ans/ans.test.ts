@@ -6,20 +6,21 @@ import {
   AccountAddress,
   AnyRawTransaction,
   GetANSNameResponse,
+  Movement,
   MovementConfig,
   Network,
   U8
 } from "../../../src";
 import { isActiveANSName, isValidANSName, SubdomainExpirationPolicy } from "../../../src/internal/ans";
 import { generateTransaction } from "../../../src/internal/transactionSubmission";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 import { publishAnsContract } from "./publishANSContracts";
 
 // This isn't great, we should look into deploying outside the test
 jest.setTimeout(20000);
 
 describe.skip("ANS", () => {
-  const { aptos, config } = getAptosClient();
+  const { movement, config } = getMovementClient();
 
   let changeExpirationDate: (
     tokenMode: 0 | 1,
@@ -39,7 +40,7 @@ describe.skip("ANS", () => {
 
   beforeAll(
     async () => {
-      const { address: ANS_ADDRESS, privateKey: ANS_PRIVATE_KEY } = await publishAnsContract(aptos);
+      const { address: ANS_ADDRESS, privateKey: ANS_PRIVATE_KEY } = await publishAnsContract(movement);
       const contractAccount = await movement.deriveAccountFromPrivateKey({ privateKey: ANS_PRIVATE_KEY });
 
       // Publish the contract, should be idempotent

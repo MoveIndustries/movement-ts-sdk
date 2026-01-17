@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import {
+  MovementApiType,
   MovementConfig,
   MovementSettings,
   Network,
@@ -29,7 +30,7 @@ describe("aptos config", () => {
     const movementConfig = new MovementConfig(settings);
     expect(movementConfig.network).toEqual("testnet");
     expect(movementConfig.getRequestUrl(MovementApiType.FULLNODE)).toBe(NetworkToNodeAPI[Network.TESTNET]);
-    expect(() => movementConfig.getRequestUrl(MovementApiType.FAUCET)).toThrow();
+    expect(movementConfig.getRequestUrl(MovementApiType.FAUCET)).toBe(NetworkToFaucetAPI[Network.TESTNET]);
     expect(movementConfig.getRequestUrl(MovementApiType.INDEXER)).toBe(NetworkToIndexerAPI[Network.TESTNET]);
   });
 

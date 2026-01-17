@@ -1,4 +1,4 @@
-import { MovementConfig } from "../../api";
+import type { MovementConfig } from "../../api";
 import { Deserializer, Serializer } from "../../bcs";
 import { EphemeralPublicKeyVariant, EphemeralSignatureVariant, HexInput } from "../../types";
 import { Hex } from "../hex";

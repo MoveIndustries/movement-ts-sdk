@@ -10,7 +10,7 @@ import {
 } from "../../../src";
 import { GetChainTopUserTransactionsQuery } from "../../../src/types/generated/operations";
 import { GetChainTopUserTransactions } from "../../../src/types/generated/queries";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
 function getMovementConfig(): MovementConfig {
   const partialConfig = {
@@ -22,7 +22,7 @@ function getMovementConfig(): MovementConfig {
     indexerConfig: { HEADERS: { indexerHeader: "indexer-header" } },
     faucetConfig: { HEADERS: { faucetHeader: "faucet-header" }, AUTH_TOKEN: "auth-token" },
   };
-  const { config } = getAptosClient(partialConfig);
+  const { config } = getMovementClient(partialConfig);
   return config;
 }
 

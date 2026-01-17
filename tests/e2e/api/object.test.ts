@@ -1,8 +1,8 @@
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
 describe("object", () => {
   test("it fetches an object data", async () => {
-    const { aptos } = getAptosClient();
+    const { movement } = getMovementClient();
     const object = await movement.getObjectDataByObjectAddress({
       objectAddress: "0x000000000000000000000000000000000000000000000000000000000000000a",
     });

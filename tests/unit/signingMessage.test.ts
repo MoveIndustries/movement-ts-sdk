@@ -2,13 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { Account, Ed25519PrivateKey, generateSigningMessageForTransaction } from "../../src";
-import { getAptosClient } from "../e2e/helper";
+import { getMovementClient } from "../e2e/helper";
 import { ed25519 } from "./helper";
 
-const { aptos } = getAptosClient();
+const { movement } = getMovementClient();
 const TRANSFER_AMOUNT = 100;
 
-describe("generateSigningMessage ", () => {
+// These tests use hardcoded expected byte arrays that are specific to local network (chain ID 4).
+// Skip when running against other networks.
+const isLocalNetwork = !process.env.MOVEMENT_NETWORK || process.env.MOVEMENT_NETWORK === "local";
+const describeIfLocal = isLocalNetwork ? describe : describe.skip;
+
+describeIfLocal("generateSigningMessage ", () => {
   const alice = Account.fromPrivateKey({
     privateKey: new Ed25519PrivateKey(ed25519.privateKey),
   });

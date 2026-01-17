@@ -1,7 +1,7 @@
 // Copyright © Move Industries
 // SPDX-License-Identifier: Apache-2.0
 
-import { MovementConfig, Network } from "../../../src";
+import { Movement, MovementConfig, Network } from "../../../src";
 import { longTestTimeout } from "../../unit/helper";
 
 describe("staking api", () => {

@@ -90,7 +90,7 @@ export class LocalNode {
   start(): void {
     const cliCommand = "npx";
     const cliArgs = [
-      "aptos",
+      "movement",
       "node",
       "run-localnet",
       "--force-restart",

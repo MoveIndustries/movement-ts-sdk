@@ -12,6 +12,7 @@ import {
   Ed25519PrivateKey,
   Ed25519PublicKey,
   KeylessAccount,
+  MultiEd25519Account,
   MultiEd25519PublicKey,
   MultiKey,
   MultiKeyAccount,
@@ -21,7 +22,6 @@ import {
   SigningSchemeInput,
   SingleKeyAccount,
 } from "../../src";
-import { MultiEd25519Account } from "../../src/account/MultiEd25519Account";
 
 import {
   ed25519,

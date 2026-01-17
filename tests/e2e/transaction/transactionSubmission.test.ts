@@ -29,7 +29,7 @@ import { MultiEd25519Account } from "../../../src/account/MultiEd25519Account";
 import { MAX_U64_BIG_INT } from "../../../src/bcs/consts";
 import { AccountAuthenticatorNoAccountAuthenticator } from "../../../src/transactions";
 import { longTestTimeout } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 import {
   b64urlEncode,
   fundAccounts,
@@ -38,7 +38,7 @@ import {
   singleSignerScriptBytecode,
 } from "./helper";
 
-const { aptos } = getAptosClient();
+const { movement } = getMovementClient();
 
 describe("transaction submission", () => {
   const contractPublisherAccount = Account.generate();
@@ -49,7 +49,7 @@ describe("transaction submission", () => {
   const secondarySignerAccount = Account.generate();
   const feePayerAccount = Account.generate();
   beforeAll(async () => {
-    await fundAccounts(aptos, [
+    await fundAccounts(movement, [
       contractPublisherAccount,
       singleSignerED25519SenderAccount,
       singleSignerSecp256k1Account,
@@ -58,7 +58,7 @@ describe("transaction submission", () => {
       secondarySignerAccount,
       feePayerAccount,
     ]);
-    await publishTransferPackage(aptos, contractPublisherAccount);
+    await publishTransferPackage(movement, contractPublisherAccount);
   }, longTestTimeout);
   describe("Single Sender ED25519", () => {
     describe("single signer", () => {

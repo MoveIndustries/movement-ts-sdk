@@ -444,6 +444,9 @@ const SERIALIZED_PAYLOAD_TRIM_TO_MAX_LENGTH = 400;
  */
 function serializeAnyPayloadForErrorMessage(payload: any): string {
   const serializedPayload = JSON.stringify(payload);
+  if (serializedPayload === undefined) {
+    return "undefined";
+  }
   if (serializedPayload.length <= SERIALIZED_PAYLOAD_TRIM_TO_MAX_LENGTH) {
     return serializedPayload;
   }

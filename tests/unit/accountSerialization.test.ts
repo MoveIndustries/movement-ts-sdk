@@ -4,6 +4,7 @@
 
 import {
   Account,
+  AccountUtils,
   EphemeralKeyPair,
   FederatedKeylessAccount,
   Groth16VerificationKey,
@@ -15,7 +16,6 @@ import {
   ZkProof,
   ZkpVariant,
 } from "../../src";
-import { AccountUtils } from "../../src/account/AccountUtils";
 
 export function testAccountSerializationDeserialization(account: Account) {
   const bytes = AccountUtils.toBytes(account);

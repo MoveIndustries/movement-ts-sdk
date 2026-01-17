@@ -8,22 +8,22 @@ import {
   postAptosFullNode,
 } from "../../../src";
 import { customClient } from "../../unit/helper";
-import { getAptosClient } from "../helper";
+import { getMovementClient } from "../helper";
 
 describe("custom client", () => {
   test("it uses default client when it doesnt set in MovementConfig", () => {
-    const { aptos } = getAptosClient();
+    const { movement } = getMovementClient();
     expect(movement.config.client.provider).toBeInstanceOf(Function);
     expect(movement.config.client.provider.name).toBe("movementClient");
   });
   test("it uses a custom client set in MovementConfig", () => {
-    const { aptos } = getAptosClient({ client: { provider: customClient } });
+    const { movement } = getMovementClient({ client: { provider: customClient } });
     expect(movement.config.client.provider).toBeInstanceOf(Function);
     expect(movement.config.client.provider.name).toBe("customClient");
   });
 
   test("it uses custom client for fetch queries", async () => {
-    const { config } = getAptosClient({ client: { provider: customClient } });
+    const { config } = getMovementClient({ client: { provider: customClient } });
     const response = await getAptosFullNode<{ headers?: { customClient?: any } }, {}>({
       movementConfig: config,
       originMethod: "getInfo",
@@ -33,7 +33,7 @@ describe("custom client", () => {
   });
 
   test("it uses custom client for post queries", async () => {
-    const { config } = getAptosClient({ client: { provider: customClient } });
+    const { config } = getMovementClient({ client: { provider: customClient } });
     const account = Account.generate();
     const response = await postAptosFaucet<{ headers?: { customClient?: any } }, {}>({
       movementConfig: config,
@@ -48,7 +48,7 @@ describe("custom client", () => {
   });
 
   test("it uses custom client for transaction submission", async () => {
-    const { aptos, config } = getAptosClient({ client: { provider: customClient } });
+    const { movement, config } = getMovementClient({ client: { provider: customClient } });
     const account = Account.generate();
     const recipient = Account.generate();
     await movement.fundAccount({ accountAddress: account.accountAddress, amount: 100_000_000 });

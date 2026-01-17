@@ -6,9 +6,9 @@
  * @category Network
  */
 export const NetworkToIndexerAPI: Record<string, string> = {
-  mainnet: "https://mainnet.movementnetwork.xyz/v1/graphql",
-  testnet: "https://api.testnet.aptoslabs.com/v1/graphql",
-  devnet: "https://api.devnet.aptoslabs.com/v1/graphql",
+  mainnet: "https://indexer.mainnet.movementnetwork.xyz/v1/graphql",
+  testnet: "https://indexer.testnet.movementnetwork.xyz/v1/graphql",
+  devnet: "https://indexer.devnet.movementnetwork.xyz/v1/graphql",
   shelbynet: "https://api.shelbynet.shelby.xyz/v1/graphql",
   netna: "https://api.netna.staging.aptoslabs.com/v1/graphql",
   local: "http://127.0.0.1:8090/v1/graphql",
@@ -32,6 +32,7 @@ export const NetworkToNodeAPI: Record<string, string> = {
  * @category Network
  */
 export const NetworkToFaucetAPI: Record<string, string> = {
+  testnet: "https://faucet.testnet.movementnetwork.xyz",
   devnet: "https://faucet.devnet.aptoslabs.com",
   shelbynet: "https://faucet.shelbynet.shelby.xyz",
   netna: "https://faucet-dev-netna-us-central1-410192433417.us-central1.run.app",
@@ -86,8 +87,8 @@ export enum Network {
  * @category Network
  */
 export const NetworkToChainId: Record<string, number> = {
-  mainnet: 1,
-  testnet: 2,
+  mainnet: 126,
+  testnet: 250,
   local: 4,
 };
 
